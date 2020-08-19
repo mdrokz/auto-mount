@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"os"
 	"os/exec"
 )
 
@@ -37,7 +36,6 @@ func main() {
 
 		if outputErr != nil {
 			fmt.Printf("ERROR: Mounting of drive - %s at location - %s failed with %v ... \n", drive.DriveName, drive.Media, outputErr)
-			os.Exit(0)
 		} else {
 			fmt.Printf("Successfully mounted drive - %s at location - %s...\n", drive.DriveName, drive.Media)
 		}
@@ -45,7 +43,6 @@ func main() {
 
 	if err != nil {
 		fmt.Println(err)
-		os.Exit(0)
 	}
 
 	fmt.Println("AutoMount of drives completed...")
